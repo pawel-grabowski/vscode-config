@@ -1,0 +1,59 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "f9",
+        "command": "editor.debug.action.selectionToRepl"
+    },
+    {
+        "key": "ctrl+f9",
+        "command": "editor.debug.action.toggleBreakpoint",
+        "when": "debuggersAvailable && editorTextFocus"
+    },
+    {
+        "key": "f9",
+        "command": "-editor.debug.action.toggleBreakpoint",
+        "when": "debuggersAvailable && editorTextFocus"
+    },
+    {
+        "key": "shift+f9",
+        "command": "-editor.debug.action.toggleInlineBreakpoint",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+f9",
+        "command": "editor.debug.action.toggleInlineBreakpoint",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+f9",
+        "command": "workbench.debug.viewlet.action.toggleBreakpointsActivatedAction"
+    },
+    {
+        "key": "ctrl+capslock",
+        "command": "toggleVim"
+    },
+    {
+        "key": "shift+space",
+        "command": "type",
+        "args": { "text": "_" },
+        "when": "editorTextFocus"
+    },
+    
+    // {
+    //     "key": "capslock",
+    //     "command": "vim.remap",
+    //     "when": "inputFocus && vim.mode == 'Insert' || vim.mode == 'Visual'",
+    //     "args": {
+    //         "after": ["<Esc>"]
+    //     }
+    // },
+    // {
+    //     "key": "capslock",
+    //     "command": "vim.remap", 
+    //     "when": "inputFocus && vim.mode == 'Normal'",
+    //     "args": {
+    //         "after": ["i"]
+    //     }
+    // }
+
+]
