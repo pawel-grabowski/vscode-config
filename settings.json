@@ -1,156 +1,200 @@
 {
-    "security.workspace.trust.untrustedFiles": "open",
+    "python.defaultInterpreterPath": "${env:VSC_DEFAULT_PYTHON}",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnType": true
+    },
+    "accessibility.signals.terminalBell": {
+        "sound": "on"
+    },
+    "autoDocstring.startOnNewLine": true,
+    "dataWrangler.debug": true,
+    // Docker integration
+    "dev.containers.dockerPath": "podman",
+    "docker.contexts.label": "Description",
+    "docker.contexts.showInStatusBar": true,
+    "docker.dockerPath": "/usr/bin/podman",
+    "docker.environment": {
+        "DOCKER_HOST": "unix:///run/user/1000/podman/podman.sock"
+    },
+    // Editor settings
+    "editor.defaultColorDecorators": true,
+    "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.inlayHints.fontSize": 9,
+    "editor.inlineSuggest.enabled": true,
+    "editor.largeFileOptimizations": false,
+    "editor.minimap.enabled": false,
+    "editor.minimap.maxColumn": 90,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.stickyScroll.enabled": true,
+    "editor.stickyScroll.maxLineCount": 10,
+    // Git-related
+    "git.openRepositoryInParentFolders": "always",
+    "git.suggestSmartCommit": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    // Python
+    "interactiveWindow.executeWithShiftEnter": true,
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    "mypy-type-checker.showNotifications": "onWarning",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.experiments.enabled": false,
+    "python.languageServer": "Pylance",
+    "python.terminal.activateEnvironment": true,
+    "python.testing.unittestEnabled": true,
+    "redhat.telemetry.enabled": false,
     "security.allowedUNCHosts": [
-        "wsl.localhost"
+        "wsl.localhost",
     ],
+    // Terminal-related
     "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.enableVisualBell": true,
+    "terminal.integrated.fontFamily": "monospace",
     "terminal.integrated.hideOnStartup": "always",
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "terminal.integrated.shellIntegration.decorationsEnabled": "gutter",
     "terminal.integrated.shellIntegration.suggestEnabled": true,
-    "terminal.integrated.fontFamily": "monospace",
-    "terminal.integrated.profiles.windows": {
-        "PowerShell": {
-            "source": "PowerShell",
-            "icon": "terminal-powershell"
-        },
-        "Command Prompt": {
-            "path": [
-                "${env:windir}\\Sysnative\\cmd.exe",
-                "${env:windir}\\System32\\cmd.exe"
-            ],
-            "args": [],
-            "icon": "terminal-cmd"
-        },
-        "Git Bash": {
-            "source": "Git Bash"
-        },
-        "Git Bash Pawel": {
-            "path": "C:\\Program Files\\Git\\bin\\bash.exe",
-            "args": [
-                "--login"
-            ]
-        }
-    },
-    "python.languageServer": "Pylance",
-    "python.analysis.completeFunctionParens": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.autoImportCompletions": true,
-    "python.terminal.activateEnvironment": true,
-    "[python]": {
-        "editor.formatOnType": true,
-        "editor.defaultFormatter": "ms-python.black-formatter"
-    },
-    "python.experiments.enabled": false,
-    "python.testing.unittestEnabled": true,
-    "mypy-type-checker.showNotifications": "onWarning",
+    // Other
     "testing.alwaysRevealTestOnStateChange": true,
-    "autoDocstring.startOnNewLine": true,
-
-    "editor.inlineSuggest.enabled": true,
-    "editor.stickyScroll.enabled": true,
-    "editor.stickyScroll.maxLineCount": 10,
-    "editor.minimap.enabled": false,
-    "editor.minimap.maxColumn": 90,
-    "editor.inlayHints.fontSize": 9,
-    "editor.lineNumbers": "relative",
-    "editor.largeFileOptimizations": false,
-    "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-
-    "git.openRepositoryInParentFolders": "always", 
-    "git.suggestSmartCommit": false,
+    "twinny.chatModelName": "tinydolphin:latest",
+    "twinny.fimModelName": "tinydolphin:latest",
+    "window.closeWhenEmpty": true,
+    "window.confirmBeforeClose": "keyboardOnly",
+    "workbench.editor.enablePreview": false,
     
-    "vim.leader": " ",
-    "vim.hlsearch": true,
-    "vim.useSystemClipboard": true,
+    // Vim-related settigs
+    "vim.useCtrlKeys": false,
     "vim.smartRelativeLine": true,
-    
-    "vim.statusBarColorControl": true,
-    "vim.statusBarColors.visual": "#276300",
-    "vim.statusBarColors.visualblock": "#5a6e00",
-    "vim.statusBarColors.visualline": "#00702b",
-    "vim.statusBarColors.disabled": "#000000",
-    "vim.gdefault": true,
-    "vim.statusBarColors.replace": "#a02236",
-    "vim.statusBarColors.insert": "#9C195B",
-    "vim.statusBarColors.normal": "#005858",
-    
+    "vim.useSystemClipboard": true,
+    "vim.foldfix":true,
     "vim.easymotion": false,
+    "vim.gdefault": true,
+    "vim.hlsearch": true,
     "vim.sneak": true,
     "vim.sneakUseIgnorecaseAndSmartcase": true,
-
-    "vim.useCtrlKeys": false,
+    // Vim insert mode
+    "vim.insertModeKeyBindings": [
+        {
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "j",
+                "j"
+            ]
+        },
+        {
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "i",
+                "i"
+            ]
+        },
+        {
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "j",
+                "k"
+            ]
+        }
+    ],
+    // Vim normal mode
+    "vim.leader": " ",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["S-Tab"],
             "after": [],
+            "before": [
+                "S-Tab"
+            ],
             "commands": [
                 {
-                    "command": "editor.action.outdentLines",
+                    "command": "editor.action.outdentLines"
                 }
             ]
         },
         {
-            "before": ["Tab"],
             "after": [],
+            "before": [
+                "Tab"
+            ],
             "commands": [
                 {
-                    "command": "editor.action.indentLines",
+                    "command": "editor.action.indentLines"
                 }
             ]
         },
         {
-            "before": [","],
+            "before": [
+                ","
+            ],
             "commands": [
                 "workbench.action.showCommands",
             ],
             "silent": true
         }
     ],
-    "vim.insertModeKeyBindings": [
-        {
-            "before": ["j", "j"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["i", "i"],
-            "after": ["<Esc>"]
-        },
-        {
-            "before": ["j", "k"],
-            "after": ["<Esc>"]
-        }
-    ],
+    // Vim visual mode
     "vim.visualModeKeyBindings": [
         {
-            "before": ["J"],
-            "commands": ["editor.action.moveLinesDownAction"]
+            "before": [
+                "J"
+            ],
+            "commands": [
+                "editor.action.moveLinesDownAction"
+            ]
         },
         {
-            "before": ["K"],
-            "commands": ["editor.action.moveLinesUpAction"]
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.moveLinesUpAction"
+            ]
         },
         {
-            "before": ["<Tab>"],
-            "after": [">"]
+            "after": [
+                ">"
+            ],
+            "before": [
+                "<Tab>"
+            ]
         },
         {
-            "before": ["<S-Tab>"],
-            "after": ["<"]
+            "after": [
+                "<"
+            ],
+            "before": [
+                "<S-Tab>"
+            ]
         },
     ],
 
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005858",
-        "statusBar.noFolderBackground": "#005858",
-        "statusBar.debuggingBackground": "#005858",
-        "statusBar.foreground": "#ffffff",
-        "statusBar.debuggingForeground": "#ffffff"
-    },
-    "editor.defaultColorDecorators": true,
-    "workbench.colorTheme": "Hack The Box",
-}
+    // Vim status bar colors
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.disabled": "#000000",
+    "vim.statusBarColors.insert": ["#9C195B", "#ffffff"],
+    "vim.statusBarColors.normal": ["#002212", "#00ff9c"],
+    "vim.statusBarColors.replace": ["#a02236", "#ffffff"],
+    "vim.statusBarColors.visual": ["#276300", "#ffffff"],
+    "vim.statusBarColors.visualblock": ["#5a6e00", "#00ff9c"],
+    "vim.statusBarColors.visualline": ["#00702b", "#ffffff"],
 
+    // Technical - it is overwritten by Vim-mode colors on mode-change
+    "workbench.colorTheme": "Cyberdyne 20XX",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#002212",
+        "statusBar.debuggingBackground": "#002212",
+        "statusBar.debuggingForeground": "#00ff9c",
+        "statusBar.foreground": "#00ff9c",
+        "statusBar.noFolderBackground": "#002212"
+    },
+}

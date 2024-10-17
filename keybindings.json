@@ -1,4 +1,5 @@
-// Place your key bindings in this file to override the defaults
+// Place your key bindings in this file to override the defaultsauto[]
+// Spyder-like python debugging
 [
     {
         "key": "f9",
@@ -14,6 +15,7 @@
         "command": "-editor.debug.action.toggleBreakpoint",
         "when": "debuggersAvailable && editorTextFocus"
     },
+    //
     {
         "key": "shift+f9",
         "command": "-editor.debug.action.toggleInlineBreakpoint",
@@ -25,35 +27,152 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+f9",
+        "key": "shift+f9",
         "command": "workbench.debug.viewlet.action.toggleBreakpointsActivatedAction"
     },
-    {
-        "key": "ctrl+capslock",
-        "command": "toggleVim"
-    },
+    
+    // Faster typing for spec characters
     {
         "key": "shift+space",
         "command": "type",
         "args": { "text": "_" },
         "when": "editorTextFocus"
     },
-    
-    // {
-    //     "key": "capslock",
-    //     "command": "vim.remap",
-    //     "when": "inputFocus && vim.mode == 'Insert' || vim.mode == 'Visual'",
-    //     "args": {
-    //         "after": ["<Esc>"]
-    //     }
-    // },
-    // {
-    //     "key": "capslock",
-    //     "command": "vim.remap", 
-    //     "when": "inputFocus && vim.mode == 'Normal'",
-    //     "args": {
-    //         "after": ["i"]
-    //     }
-    // }
+    {
+        "key": "alt+-",
+        "command": "type",
+        "args": { "text": "<-" },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+shift+-",
+        "command": "type",
+        "args": { "text": "->" },
+        "when": "editorTextFocus"
+    },
 
+    // Vim - CapsLock settigs (test)
+    {
+        "key": "ctrl+capslock",
+        "command": "toggleVim"
+    },
+    {
+        "key": "capslock",
+        "command": "vim.remap",
+        "when": "inputFocus && vim.mode == 'Insert' || vim.mode == 'Visual'",
+        "args": {
+            "after": ["<Esc>"]
+        }
+    },
+    {
+        "key": "capslock",  
+        "command": "vim.remap", 
+        "when": "inputFocus && vim.mode == 'Normal'",
+        "args": {
+            "after": ["i"]
+        }
+    },
+
+    // Traverse VSCode IntelliSense suggestions with vim keybindings
+    {
+        "key": "alt+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+
+    // Focusing editor groups (panes) with hjkl
+    {
+        "key": "ctrl+k h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+left",
+        "command": "-workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+k l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+right",
+        "command": "-workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+k k",
+        "command": "workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+up",
+        "command": "-workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "ctrl+k j",
+        "command": "workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+down",
+        "command": "-workbench.action.focusBelowGroup"
+    },
+
+    // Traverse VSCode quick open options with vim keybindings.
+    {
+        "key": "alt+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    
+    // Other - splits
+    {
+        "key": "ctrl+shift+oem_minus",
+        "command": "workbench.action.splitEditorDown",
+        "when": "editorTextFocus && !notebookEditorFocused"
+    },
+    {
+    "key": "ctrl+shift+oem_5",
+    "command": "workbench.action.splitEditorRight",
+    "when": "editorTextFocus && !notebookEditorFocused"
+    },
+
+    // Other - terminal settings
+    {
+        "key": "ctrl+k ctrl+shift+t",
+        "command": "workbench.action.selectTheme"
+    },
+    {
+        "key": "ctrl+k ctrl+t",
+        "command": "-workbench.action.selectTheme"
+    },
+    {
+        "key": "ctrl+k ctrl+t",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+oem_3",
+        "command": "workbench.action.terminal.newWithProfile"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+oem_3",
+        "command": "-workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    }
 ]
