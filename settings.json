@@ -137,10 +137,24 @@
                 ","
             ],
             "commands": [
-                "workbench.action.showCommands",
+                "workbench.action.showCommands"
             ],
             "silent": true
-        }
+        },
+        //center search result
+        {
+            "before": ["n"],
+            "after": ["n", "z", "z", "z", "v"]
+        },
+        {
+            "before": ["N"],
+            "after": ["N", "z", "z", "z", "v"]
+        },
+        // yank till end of line
+        {
+            "before": ["Y"],
+            "after": ["y", "$"]
+        }, 
     ],
     // Vim visual mode
     "vim.visualModeKeyBindings": [
@@ -176,6 +190,19 @@
                 "<S-Tab>"
             ]
         },
+    ],
+    
+    // Vim operation pending mode
+    // quick ops inside parentheses/brackets (with c/d/y)
+    "vim.operatorPendingModeKeyBindings": [
+        {
+            "before": ["b"],
+            "after": ["i", "["]
+        },
+        {
+            "before": ["p"],
+            "after": ["i", "("]
+        }
     ],
 
     // Vim status bar colors
