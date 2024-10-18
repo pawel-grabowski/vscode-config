@@ -56,22 +56,24 @@
         "key": "ctrl+capslock",
         "command": "toggleVim"
     },
-    {
-        "key": "capslock",
-        "command": "vim.remap",
-        "when": "inputFocus && vim.mode == 'Insert' || vim.mode == 'Visual'",
-        "args": {
-            "after": ["<Esc>"]
-        }
-    },
-    {
-        "key": "capslock",  
-        "command": "vim.remap", 
-        "when": "inputFocus && vim.mode == 'Normal'",
-        "args": {
-            "after": ["i"]
-        }
-    },
+    // Those below doesn't work well, cause CapsLock still works also as lower/upper case switcher,
+    // impacting also vim commands in normal/visual mode !!!
+    // {
+    //     "key": "capslock",
+    //     "command": "vim.remap",
+    //     "when": "inputFocus && vim.mode == 'Insert' || vim.mode == 'Visual'",
+    //     "args": {
+    //         "after": ["<Esc>"]
+    //     }
+    // },
+    // {
+    //     "key": "capslock",  
+    //     "command": "vim.remap", 
+    //     "when": "inputFocus && vim.mode == 'Normal'",
+    //     "args": {
+    //         "after": ["i"]
+    //     }
+    // },
 
     // Traverse VSCode IntelliSense suggestions with vim keybindings
     {
